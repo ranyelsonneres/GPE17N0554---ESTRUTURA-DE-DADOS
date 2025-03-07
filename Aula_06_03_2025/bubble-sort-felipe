@@ -1,0 +1,36 @@
+#include <stdio.h>
+#define TAM 25
+
+void bubbleSort(int vetor[], int n) {
+    
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (vetor[j] > vetor[j + 1]) {
+                
+                int temp = 0;
+                temp = vetor[j];
+                
+                vetor[j] = vetor[j + 1];
+                vetor[j + 1] = temp;
+                
+            }
+        }
+    }
+    
+}
+
+int main() {
+    
+    int vetor1[TAM] = {14, 25, 10, 20, 21, 1, 2, 3, 4, 5, 9, 6, 12, 11, 17, 19, 22, 24, 23, 15, 7, 8, 16, 18, 13};
+    int tamanho = TAM;
+    
+    bubbleSort(vetor1, tamanho);
+    
+    printf("Vetor 1 = { ");
+    for (int i = 0; i < tamanho; i++) {
+        printf("%d ", vetor1[i]);
+    }
+    printf("}");
+    
+    return 0;
+}
