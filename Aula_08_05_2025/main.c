@@ -12,7 +12,7 @@ typedef struct {
     No* inicio;
 } Lista;
 
-// Operações do TAD
+
 Lista* criarLista();
 int inserirInicio(Lista* l, TipoElemento valor);
 int inserirFim(Lista* l, TipoElemento valor);
