@@ -1,24 +1,24 @@
-#ifndef LISTA_H
-#define LISTA_H
+#include <stdio.h>
+#include "lista.h"
 
-typedef int TipoElemento;
+int main() {
+    Lista* l = criarLista();
 
-typedef struct no {
-    TipoElemento dado;
-    struct no* prox;
-} No;
+    inserirFim(l, 10);
+    inserirFim(l, 20);
+    inserirFim(l, 30);
+    inserirInicio(l, 5);
 
-typedef struct {
-    No* inicio;
-} Lista;
+    mostrarLista(l); 
 
+    TipoElemento valor;
+    if (acessarElemento(l, 2, &valor)) {
+        printf("Elemento na posição 2: %d\n", valor); 
+    }
 
-Lista* criarLista();
-int inserirInicio(Lista* l, TipoElemento valor);
-int inserirFim(Lista* l, TipoElemento valor);
-int removerNaPosicao(Lista* l, int posicao);
-int acessarElemento(Lista* l, int posicao, TipoElemento* valor);
-void mostrarLista(Lista* l);
-void destruirLista(Lista* l);
+    removerNaPosicao(l, 1); 
+    mostrarLista(l);         
 
-#endif
+    destruirLista(l);
+    return 0;
+}
